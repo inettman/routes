@@ -1,0 +1,36 @@
+#map{
+    width:100%;
+    height: 100%;
+}
+.map_control .place_href_container, .map_control .weather_href_container {
+    display: none;
+}
+.banner {
+    margin-bottom:10px;
+}
+.bookmarks * {
+    box-sizing: content-box;
+}
+.info-window{
+    padding: 10px;
+}
+.margin-bottom {
+    margin-bottom:10px;
+}
+.closed {
+    display: none;
+}
+.clear {
+    clear: both;
+}
+.map_control {
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
