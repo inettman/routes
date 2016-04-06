@@ -45,9 +45,10 @@
         <script src="js/ie10-viewport-bug-workaround.js"></script>
         <script src="js/activeLink.js"></script>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWxrhC4CqfvGCN_XYpbt8FruJzBK_045c&callback=initMap&libraries=places"></script>
+    <script src="http://maps.google.com/maps/api/js?libraries=places"></script>
     <script type="text/javascript">
         var map;
+
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: 48.46, lng: 35.01},
@@ -80,6 +81,11 @@
         var routeInstructionText = 'Полное описание маршрута';
         var routeInstruction = jQuery('#route_instruction');
         var routeNotFound = 'Маршрут не найден';
+
+        $(function() {
+            initMap();
+        });
+
     </script>
     <script src="js/map/route.js"></script>
     </body>
