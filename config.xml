@@ -12,6 +12,6 @@
     <description>
         Построение маршрута, определение стоимости поездки на авто
     </description>
-    <preference name="loadUrlTimeoutValue" value="700000" />
+    <preference name="loadUrlTimeoutValue" value="1000000" />
 </widget>
 
