@@ -13,5 +13,8 @@
         Построение маршрута, определение стоимости поездки на авто
     </description>
     <preference name="loadUrlTimeoutValue" value="1000000" />
+
+    <gap:plugin name="cordova-plugin-admob" source="npm" />
+
 </widget>
 
