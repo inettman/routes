@@ -18,6 +18,8 @@
     <gap:plugin name="cordova-plugin-admobpro" source="npm" />
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
 
+    <access origin="http://maps.google.com/maps/api/js" />
+
     <icon src="img/logo.png" />
 </widget>
 
