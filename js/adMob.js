@@ -1,30 +1,46 @@
 var admobid = {};
-if( /(android)/i.test(navigator.userAgent) ) { // for android & amazon-fireos
-    admobid = {
-        banner: 'ca-app-pub-0006856964532208/6283907611', // or DFP format "/6253334/dfp_example_ad"
+
+if( /(android)/i.test(navigator.userAgent) ) {
+    admobid = { // for Android
+        banner: 'ca-app-pub-0006856964532208/6283907611',
         interstitial: 'ca-app-pub-0006856964532208/3073089213'
     };
-} else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios
-    admobid = {
-        banner: 'ca-app-pub-0006856964532208/6283907611', // or DFP format "/6253334/dfp_example_ad"
+} else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
+    admobid = { // for iOS
+        banner: 'ca-app-pub-0006856964532208/6283907611',
         interstitial: 'ca-app-pub-0006856964532208/3073089213'
     };
-} else { // for windows phone
-    admobid = {
-        banner: 'ca-app-pub-0006856964532208/6283907611', // or DFP format "/6253334/dfp_example_ad"
+} else {
+    admobid = { // for Windows Phone
+        banner: 'ca-app-pub-0006856964532208/6283907611',
         interstitial: 'ca-app-pub-0006856964532208/3073089213'
     };
 }
 
-$(function() {
-    if(AdMob) AdMob.createBanner({
+function initApp() {
+    if (! AdMob ) { alert( 'admob plugin not ready' ); return; }
+
+    // this will create a banner on startup
+    AdMob.createBanner( {
         adId: admobid.banner,
         position: AdMob.AD_POSITION.BOTTOM_CENTER,
-        autoShow: true });
+        isTesting: true, // TODO: remove this line when release
+        overlap: false,
+        offsetTopBar: false,
+        bgColor: 'black'
+    } );
 
-    if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+    // this will load a full screen ad on startup
+    AdMob.prepareInterstitial({
+        adId: admobid.interstitial,
+        isTesting: true, // TODO: remove this line when release
+        autoShow: true
+    });
+}
 
-// show the interstitial later, e.g. at end of game level
-    if(AdMob) AdMob.showInterstitial();
-});
+if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
+    document.addEventListener('deviceready', initApp, false);
+} else {
+    initApp();
+}
 
