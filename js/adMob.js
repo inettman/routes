@@ -38,9 +38,13 @@ function initApp() {
     });
 }
 
-if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
-    document.addEventListener('deviceready', initApp, false);
-} else {
-    initApp();
-}
+
+$(function() {
+    if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
+        document.addEventListener('deviceready', initApp, false);
+    } else {
+        initApp();
+    }
+});
+
 
