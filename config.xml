@@ -16,5 +16,7 @@
 
     <preference name="android-build-tool" value="gradle" />
     <gap:plugin name="cordova-plugin-admobpro" source="npm" />
+
+    <icon src="res/logo.png" />
 </widget>
 
