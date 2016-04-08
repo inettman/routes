@@ -36,8 +36,8 @@
                         <input type="text" class="form-control" id="petrol_cost" placeholder="Стоимость топлива (за 1 литр)">
                     </div>
                 </div>
-                <div id="route_info"></div>
             </div>
+            <div id="route_info"></div>
         </div>
         <div id="map"></div>
 
@@ -55,7 +55,11 @@
             map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: 48.46, lng: 35.01},
                 zoom: 6,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeControlOptions: {
+                    style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                    position: google.maps.ControlPosition.LEFT_BOTTOM
+                }
             });
                 route();
         }
