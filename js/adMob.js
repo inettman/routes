@@ -16,12 +16,15 @@ if( /(android)/i.test(navigator.userAgent) ) { // for android & amazon-fireos
     };
 }
 
-if(AdMob) AdMob.createBanner({
-    adId: admobid.banner,
-    position: AdMob.AD_POSITION.BOTTOM_CENTER,
-    autoShow: true });
+$(function() {
+    if(AdMob) AdMob.createBanner({
+        adId: admobid.banner,
+        position: AdMob.AD_POSITION.BOTTOM_CENTER,
+        autoShow: true });
 
-if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+    if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 
 // show the interstitial later, e.g. at end of game level
-if(AdMob) AdMob.showInterstitial();
+    if(AdMob) AdMob.showInterstitial();
+});
+
