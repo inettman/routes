@@ -19,8 +19,6 @@
     <gap:plugin name="cordova-plugin-whitelist" source="npm">
 
     <access origin="*" />
-    <allow-navigation href="*" />
-    <allow-intent href="*" />
 
     <icon src="img/logo.png" />
 </widget>
