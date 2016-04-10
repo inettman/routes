@@ -16,8 +16,11 @@
 
     <preference name="android-build-tool" value="gradle" />
     <gap:plugin name="cordova-plugin-admobpro" source="npm" />
+    <gap:plugin name="cordova-plugin-whitelist" source="npm">
 
     <access origin="*" />
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
 
     <icon src="img/logo.png" />
 </widget>
