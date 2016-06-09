@@ -48,45 +48,6 @@
         <script src="js/activeLink.js"></script>
 
     <script src="http://maps.google.com/maps/api/js?libraries=places"></script>
-
-
-<script>
-
-
-// PhoneGap is loaded and it is now safe to make calls PhoneGap methods
-function onDeviceReady() {
-navigator.network.isReachable("google.com", reachableCallback, {});
-}
-// Check network status
-function reachableCallback(reachability) {
-  // There is no consistency on the format of reachability
-  var networkState = reachability.code || reachability;
-  var states = {};
-  states[NetworkStatus.NOT_REACHABLE]                      = 'No network connection';
-  states[NetworkStatus.REACHABLE_VIA_CARRIER_DATA_NETWORK] = 'Carrier data connection';
-  states[NetworkStatus.REACHABLE_VIA_WIFI_NETWORK]         = 'WiFi connection';
-  if (networkState != 0) online = true;
-}
-var online = navigator.onLine || false;
-$(document).ready(function() { 
-  $(document).bind('deviceready', function(){
-    onDeviceReady()
-  })
-  // Your main code
-})
-
-if(online) {
-  alert('11');
-} else {
-  alert('222');
-}
-
-            
-
-
-    </script>
-
-
     <script type="text/javascript">
         var map;
 
@@ -102,6 +63,23 @@ if(online) {
             });
                 route();
         }
+
+
+// check to see if the network is reachable
+setTimeout(function() {
+  navigator.network.isReachable("www.google.com",
+  networkConnectionCheck, {isIpAddress:false});
+}, 500);
+
+function networkConnectionCheck(reachability) {
+  if ( reachability.remoteHostStatus == NetworkStatus.NOT_REACHABLE ) {
+    navigator.notification.alert("You appear to be offline.", "your app name");
+  } else {
+    navigator.notification.alert("You appear to be online.", "your app name");
+  }
+};
+
+
     </script>
 
     <script type="text/javascript">
@@ -132,7 +110,6 @@ if(online) {
         });
 
     </script>
-    
     <script src="js/map/route.js"></script>
     <script src="js/adMob.js"></script>
     <script src="js/analitycs.js"></script>
