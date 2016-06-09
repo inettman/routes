@@ -51,26 +51,39 @@
 
 
 <script>
+document.addEventListener("deviceready", onDeviceReady, false);
 
+function onDeviceReady(){
+    alert('Firing device ready');
+    try{
+        var networkState = navigator.connection.type;
 
-            networkState = navigator.connection && navigator.connection.type;
+        var states = {};
+        states[Connection.UNKNOWN]  = 'Unknown connection';
+        states[Connection.ETHERNET] = 'Ethernet connection';
+        states[Connection.WIFI]     = 'WiFi connection';
+        states[Connection.CELL_2G]  = 'Cell 2G connection';
+        states[Connection.CELL_3G]  = 'Cell 3G connection';
+        states[Connection.CELL_4G]  = 'Cell 4G connection';
+        states[Connection.NONE]     = 'No network connection';
 
-            var states = {};
-            states[Connection.UNKNOWN]  = 'Unknown connection';
-            states[Connection.ETHERNET] = 'Ethernet connection';
-            states[Connection.WIFI]     = 'WiFi connection';
-            states[Connection.CELL_2G]  = 'Cell 2G connection';
-            states[Connection.CELL_3G]  = 'Cell 3G connection';
-            states[Connection.CELL_4G]  = 'Cell 4G connection';
-            states[Connection.NONE]     = 'No network connection';
+        $("#system_popup").html('Connection type: ' + states[networkState]);
+        $("#system_popup").popup("open")
+        //alert('Connection type: ' + states[networkState]);
+    }catch(e){
+        alert(e);
+        $.each(navigator, function(key, value){
+            alert(key+' => '+value);
+        });
+    }
+}
 
-            alert('Connection type: ' + states[networkState]);
-
+            
 
 
     </script>
 
-    
+
     <script type="text/javascript">
         var map;
 
