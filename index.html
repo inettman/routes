@@ -54,22 +54,23 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady(){
-    alert('Firing device ready');
     try{
-        var networkState = navigator.connection.type;
+        var networkState = navigator.connection && navigator.connection.type;
 
-        var states = {};
-        states[Connection.UNKNOWN]  = 'Unknown connection';
-        states[Connection.ETHERNET] = 'Ethernet connection';
-        states[Connection.WIFI]     = 'WiFi connection';
-        states[Connection.CELL_2G]  = 'Cell 2G connection';
-        states[Connection.CELL_3G]  = 'Cell 3G connection';
-        states[Connection.CELL_4G]  = 'Cell 4G connection';
-        states[Connection.NONE]     = 'No network connection';
+        setTimeout(function(){
+            networkState = navigator.connection && navigator.connection.type;
 
-        $("#system_popup").html('Connection type: ' + states[networkState]);
-        $("#system_popup").popup("open")
-        //alert('Connection type: ' + states[networkState]);
+            var states = {};
+            states[Connection.UNKNOWN]  = 'Unknown connection';
+            states[Connection.ETHERNET] = 'Ethernet connection';
+            states[Connection.WIFI]     = 'WiFi connection';
+            states[Connection.CELL_2G]  = 'Cell 2G connection';
+            states[Connection.CELL_3G]  = 'Cell 3G connection';
+            states[Connection.CELL_4G]  = 'Cell 4G connection';
+            states[Connection.NONE]     = 'No network connection';
+
+            alert('Connection type: ' + states[networkState]);
+        }, 500);
     }catch(e){
         alert(e);
         $.each(navigator, function(key, value){
