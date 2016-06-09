@@ -65,11 +65,8 @@
         }
 
 
-// check to see if the network is reachable
-setTimeout(function() {
-  navigator.network.isReachable("www.google.com",
+navigator.network.isReachable("www.google.com",
   networkConnectionCheck, {isIpAddress:false});
-}, 500);
 
 function networkConnectionCheck(reachability) {
   if ( reachability.remoteHostStatus == NetworkStatus.NOT_REACHABLE ) {
