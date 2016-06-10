@@ -49,27 +49,24 @@
 
 
         <script type="text/javascript">
-        alert('111');
-                navigator.notification.alert("Для работы приложения нужно подключение вашего устройства к интернету", 
-                                      function() {navigator.app.exitApp();}, 
-                                      "Интернет соединение отсутствует!");
-                    // isConnect('http://google.com/');
-                    // function isConnect(url)
-                    // {
-                    //     var http = new XMLHttpRequest();
-                    //     http.open('HEAD', url, true);
-                    //     http.onreadystatechange = function() {
-                    //         if (this.readyState == this.DONE) {
-                    //             if ((this.status >= 200 && this.status < 304)) {
-                    //                 alert(this.status);
-                    //                 navigator.notification.alert("Для работы приложения нужно подключение вашего устройства к интернету", 
-                    //                   function() {navigator.app.exitApp();}, 
-                    //                   "Интернет соединение отсутствует!");
-                    //             }
-                    //         }
-                    //     };
-                    //     http.send();
-                    // } 
+
+            isConnect('http://google.com/');
+            function isConnect(url)
+            {
+                var http = new XMLHttpRequest();
+                http.open('HEAD', url, true);
+                http.onreadystatechange = function() {
+                    if (this.readyState == this.DONE) {
+                        if ((this.status >= 200 && this.status < 304)) {
+                            alert(this.status);
+                            navigator.notification.alert("Для работы приложения нужно подключение вашего устройства к интернету", 
+                              function() {navigator.app.exitApp();}, 
+                              "Интернет соединение отсутствует!");
+                        }
+                    }
+                };
+                http.send();
+            } 
         </script>
 
 
