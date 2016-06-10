@@ -21,6 +21,7 @@
     <gap:plugin
         name="org.apache.cordova.network-information"
         version="0.2.7" />
+    <plugin name="org.apache.cordova.dialogs" source="pgb" />
 
     <access origin="*" />
     <allow-navigation href="*" />
