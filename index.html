@@ -26,8 +26,8 @@
         <div class="map_control">
             <p><button class="btn btn-primary" id="map_options_control">Скрыть настройки</button></p>
             <div id="map_options">
-                <p><input class="form-control input-lg" id="route_start" type="text" placeholder="Начало маршрута"></p>
-                <p><input class="form-control input-lg" id="route_end" type="text" placeholder="Конец маршрута"></p>
+                <p><input onClick="this.select();" class="form-control input-lg" id="route_start" type="text" placeholder="Начало маршрута"></p>
+                <p><input onClick="this.select();" class="form-control input-lg" id="route_end" type="text" placeholder="Конец маршрута"></p>
                 <div class="row margin-bottom">
                     <div class="col-xs-12 col-sm-6 col-lg-4 margin-bottom">
                         <input type="text" class="form-control" id="petrol_used" placeholder="Расход бензина на 100 км (литров)">
@@ -60,7 +60,7 @@
                 http.onreadystatechange = function() {
                     if (this.readyState == this.DONE) {
                         if (!(this.status >= 200 && this.status < 304)) {
-                            navigator.notification.alert("Для работы приложения нужно подключение вашего устройства к интернету", 
+                            navigator.notification.alert("Для работы приложения нужно подключение вашего устройства к интернету!", 
                               function() {navigator.app.exitApp();}, 
                               "Интернет соединение отсутствует!");
                         }
