@@ -42,8 +42,8 @@
         <div id="map"></div>
 
         <script type="text/javascript">
-            UrlExists('http://google.com/');
-            function UrlExists(url)
+            isConnect('http://google.com/');
+            function isConnect(url)
             {
                 var http = new XMLHttpRequest();
                 http.open('HEAD', url, true);
