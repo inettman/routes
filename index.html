@@ -49,21 +49,17 @@
                 http.open('HEAD', url, true);
                 http.onreadystatechange = function() {
                     if (this.readyState == this.DONE) {
-                        alert(this.status);
-                        navigator.notification.alert("This app needs an internet connection", 
-                              function() {navigator.app.exitApp();}, 
-                              "Offline!");
                         if (!(this.status >= 200 && this.status < 304)) {
-                            navigator.notification.alert("This app needs an internet connection", 
+                            navigator.notification.alert("Для работы приложения нужно подключение вашего устройства к интернету", 
                               function() {navigator.app.exitApp();}, 
-                              "Offline!");
+                              "Интернет соединение отсутствует!");
                         }
                     }
                 };
                 http.send();
             } 
         </script>
-
+        
         <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
         <script src="js/bootstrap.min.js"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
