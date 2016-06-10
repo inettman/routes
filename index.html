@@ -49,6 +49,7 @@
                 http.open('HEAD', url, true);
                 http.onreadystatechange = function() {
                     if (this.readyState == this.DONE) {
+                        alert(this.status);
                         if (!(this.status >= 200 && this.status < 304)) {
                             navigator.notification.alert("This app needs an internet connection", 
                               function() {navigator.app.exitApp();}, 
