@@ -52,9 +52,7 @@
 
             $(document).ready(function () {
                 alert(this.status);
-                navigator.notification.alert("Для работы приложения нужно подключение вашего устройства к интернету", 
-                  function() {navigator.app.exitApp();}, 
-                  "Интернет соединение отсутствует!");
+                navigator.app.exitApp();
             });
             
             // isConnect('http://google.com/');
