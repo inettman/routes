@@ -22,8 +22,6 @@
         name="org.apache.cordova.network-information"
         version="0.2.7" />
 
-    <plugin name="App" value="org.apache.cordova.App"/>
-
     <access origin="*" />
     <allow-navigation href="*" />
     <allow-intent href="*" />
