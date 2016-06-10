@@ -42,18 +42,30 @@
         <div id="map"></div>
 
         <script type="text/javascript">
-            var test = navigator.network.isReachable("www.google.com",
-              networkConnectionCheck, {isIpAddress:false});
+            
+            function doesConnectionExist() {
+                var xhr = new XMLHttpRequest();
+                var file = "http://google.com";
+                var randomNum = Math.round(Math.random() * 8000);
 
-            alert(test);
+                xhr.open('HEAD', file + "?rand=" + randomNum, false);
 
-            function networkConnectionCheck(reachability) {
-              if ( reachability.remoteHostStatus == NetworkStatus.NOT_REACHABLE ) {
-                alert("You appear to be offline.");
-              } else {
-                alert("You appear to be online.");
-              }
-            };
+                try {
+
+                    xhr.send();
+
+                    if (xhr.status >= 200 && xhr.status < 304) {
+                        alert('true status');
+                    } else {
+                        alert('false status');
+                    }
+
+                } catch (e) {
+                        alert('false exception');
+                }
+            } 
+
+
         </script>
 
         <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
@@ -77,7 +89,7 @@
                 }
             });
                 route();
-        }z
+        }
     </script>
 
     <script type="text/javascript">
