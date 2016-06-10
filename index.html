@@ -43,25 +43,18 @@
 
         <script type="text/javascript">
             
-            doesConnectionExist();
-            function doesConnectionExist() {
-                var xhr = new XMLHttpRequest();
+            UrlExists('http://foto-market.net/image/cache/data-photo-fantasy-0f782ee27fd038e63640e2ccf13ae49c-270x189.jpg');
 
-                xhr.open('HEAD', "http://google.com", false);
-
-                try {
-
-                    xhr.send();
-
-                    if (xhr.status >= 200 && xhr.status < 304) {
-                        alert('true status');
-                    } else {
-                        alert('false status');
+            function UrlExists(url)
+            {
+                var http = new XMLHttpRequest();
+                http.open('HEAD', url, true);
+                http.onreadystatechange = function() {
+                    if (this.readyState == this.DONE) {
+                        alert(this.status);
                     }
-
-                } catch (e) {
-                        alert('false exception');
-                }
+                };
+                http.send();
             } 
 
 
