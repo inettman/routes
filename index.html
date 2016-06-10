@@ -42,14 +42,14 @@
         <div id="map"></div>
 
         <script type="text/javascript">
-            UrlExists('http://google.com');
+            UrlExists('http://google.com/');
             function UrlExists(url)
             {
                 var http = new XMLHttpRequest();
                 http.open('HEAD', url, true);
                 http.onreadystatechange = function() {
                     if (this.readyState == this.DONE) {
-                        if (!(xhr.status >= 200 && xhr.status < 304)) {
+                        if (!(this.status >= 200 && this.status < 304)) {
                             navigator.notification.alert("This app needs an internet connection", 
                               function() {navigator.app.exitApp();}, 
                               "Offline!");
