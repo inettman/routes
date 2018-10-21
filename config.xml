@@ -18,7 +18,8 @@
 
     <gap:plugin name="phonegap-admob" source="npm"/>
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
-
+    <preference name="GMS_VERSION" default="11.0.1"/>
+    <gap:plugin name="com.adobe.plugins.gaplugin" />
     <plugin name="cordova-plugin-network-information" />
     <plugin name="cordova-plugin-dialogs" />
 
