@@ -16,7 +16,7 @@
 
     <preference name="android-build-tool" value="gradle" />
 
-    <gap:plugin name="cordova-plugin-admobpro" source="npm" />
+    <gap:plugin name="phonegap-admob" source="npm"/>
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
 
 
