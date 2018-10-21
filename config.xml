@@ -19,7 +19,7 @@
     <gap:plugin name="phonegap-admob" source="npm"/>
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <gap:plugin name="cordova-plugin-google-analytics" source="npm"> <param name="android-package" value="com.danielcwilson.plugins.analytics.UniversalAnalyticsPlugin" />  </gap:plugin>
-    <plugin name="cordova-plugin-network-information" />
+
 
 
     <access origin="*" />
