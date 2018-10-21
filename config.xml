@@ -19,7 +19,7 @@
 
     <gap:plugin name="phonegap-admob" source="npm"/>
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
-    <gap:plugin name="cordova-plugin-google-analytics" source="npm"> </gap:plugin>
+    <gap:plugin name="com.adobe.plugins.gaplugin" version="2.3.1" />
 
     <plugin name="cordova-plugin-network-information" />
     <plugin name="cordova-plugin-dialogs" />
