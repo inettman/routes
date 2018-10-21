@@ -15,7 +15,8 @@
     <preference name="loadUrlTimeoutValue" value="1000000" />
 
     <preference name="android-build-tool" value="gradle" />
-    <preference name="phonegap-version" value="cli-7.1.0" />
+    <preference name="phonegap-version" value="cli-8.0.0" />
+    <preference name='pgb-builder-version' value='1' />
     <gap:plugin name="cordova-plugin-admobpro" source="npm" />
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <gap:plugin name="cordova-plugin-google-analytics" source="npm"> <param name="ios-package" value="UniversalAnalyticsPlugin" /> <param name="android-package" value="com.danielcwilson.plugins.analytics.UniversalAnalyticsPlugin" /> <param name="wp-package" value="UniversalAnalyticsPlugin" /> </gap:plugin>
